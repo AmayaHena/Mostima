@@ -14,13 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: build
-      run: ./bUwUild.sh
-
-  keyword:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: build
       run: ./build.sh
