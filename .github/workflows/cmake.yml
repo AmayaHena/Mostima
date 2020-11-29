@@ -27,4 +27,4 @@ jobs:
     - name: criterion
       run: sudo add-apt-repository ppa:snaipewastaken/ppa && sudo apt-get install criterion-dev
     - name: AVTests
-      run: cd tests/ && g++ test_crit.cpp -l criterion -I ../inc/ ../src/Core.cpp && mv a.out .. && cd .. && ./a.out
+      run: cd tests/ && g++ AVTests.cpp -l criterion -I ../inc/ ../src/Core.cpp && mv a.out .. && cd .. && ./a.out
