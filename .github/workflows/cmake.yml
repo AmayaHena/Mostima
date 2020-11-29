@@ -15,3 +15,16 @@ jobs:
     - uses: actions/checkout@v2
     - name: build
       run: ./build.sh
+
+  tests:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: build
+      run: ./build.sh
+    - name: criterion
+      run: sudo add-apt-repository ppa:snaipewastaken/ppa && sudo apt-get install criterion-dev
+    - name: AVTests
+      run: cd tests/ && g++ test_crit.cpp -l criterion -I ../inc/ ../src/Core.cpp && mv a.out .. && cd .. && ./a.out
