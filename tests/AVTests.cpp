@@ -23,6 +23,15 @@ Test(void, void)
 
     v.push_back("a.out");
 
-    ASSERT_INT(1, c.run(v));
-}
+    ASSERT_INT(0, c.run(v));
 
+    v.clear();
+    v.push_back("zeajielzaj/ezaoilheolizja/ezailpejzilma.c");
+
+    ASSERT_INT(0, c.run(v));
+
+    v.clear();
+    v.push_back("zeajielzaj/ezaoilheolizja/ezailpejzilma/ezaeza");
+
+    ASSERT_INT(0, c.run(v));
+}
