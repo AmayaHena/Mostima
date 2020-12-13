@@ -13,7 +13,7 @@
     #include <unistd.h>
     #include <bits/stdc++.h>
 
-namespace FileManager {
+namespace Nyx {
 
     class File final {
 

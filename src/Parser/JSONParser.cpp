@@ -7,7 +7,7 @@
 
 #include "JSONParser.hpp"
 
-namespace FormatParser {
+namespace Nyx {
 
     /* PRIVATE METHODS */
 

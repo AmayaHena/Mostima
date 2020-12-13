@@ -12,7 +12,7 @@
 
     #include "File.hpp"
 
-namespace FormatParser {
+namespace Nyx {
 
     class JSONParser final {
 
@@ -21,19 +21,19 @@ namespace FormatParser {
             JSONParser() = default;
 
             /* Parse */
-            inline std::vector<std::pair<std::string, std::string>> parse(FileManager::File &f) const { return parseAll(f.getContent()); }
+            inline std::vector<std::pair<std::string, std::string>> parse(File &f) const { return parseAll(f.getContent()); }
             inline std::vector<std::pair<std::string, std::string>> parse(const std::vector<std::string> &v) const { return parseAll(v); }
 
             /* Parse Section */
-            inline std::vector<std::pair<std::string, std::string>> parse(FileManager::File &f, const std::string &match) const { return parseSection(f.getContent(), match); }
+            inline std::vector<std::pair<std::string, std::string>> parse(File &f, const std::string &match) const { return parseSection(f.getContent(), match); }
             inline std::vector<std::pair<std::string, std::string>> parse(const std::vector<std::string> &v, const std::string &match) const { return parseSection(v, match); }
 
             /* Parse RV */
-            inline std::string parseRV(FileManager::File &f, const std::string &match) const { return parseValue(f.getContent(), match); }
+            inline std::string parseRV(File &f, const std::string &match) const { return parseValue(f.getContent(), match); }
             inline std::string parseRV(const std::vector<std::string> &v, const std::string &match) const { return parseValue(v, match); }
 
             /* Get Section Name(s) */
-            inline std::vector<std::string> getSection(FileManager::File &f) const { return getSName(f.getContent()); }
+            inline std::vector<std::string> getSection(File &f) const { return getSName(f.getContent()); }
             inline std::vector<std::string> getSection(const std::vector<std::string> &v) const { return getSName(v); }
 
         private:

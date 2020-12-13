@@ -10,7 +10,7 @@
 
 #include "File.hpp"
 
-namespace FileManager {
+namespace Nyx {
 
     /* CTOR & DTOR */
 
