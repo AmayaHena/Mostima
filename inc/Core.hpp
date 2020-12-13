@@ -11,6 +11,8 @@
     #include <vector>
     #include <string>
 
+    #include "File.hpp"
+
 class Core final {
 
     public:
@@ -18,10 +20,16 @@ class Core final {
         Core() = default;
         ~Core() = default;
 
-        bool run(const std::vector<std::string> &v);
+        bool run(const std::vector<std::string> &v) noexcept;
 
     private:
 
-        void help(const std::string &s);
+        bool avCheck(const std::vector<std::string> &v);
+
+        bool help(const std::string &s);
+
+    private:
+
+        Nyx::File _f;
 
 };
