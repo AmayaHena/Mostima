@@ -1,0 +1,5 @@
+{
+    "numeric": "int size_t",
+    "char": "char",
+    "string": "char*"
+}
