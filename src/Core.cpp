@@ -23,8 +23,8 @@ bool Core::avCheck(const std::vector<std::string> &v)
     if (v.empty())
         return help("Files Warning");
 
-    if (!_f.setPath(v[0]))
-        return help("File " + v[0] + " doesn't exists");
+    if (!_f.setPath(v[0]) || _f.getExtension() != "c")
+        return help("C File '" + v[0] + "' doesn't exists");
 
     return true;
 }
