@@ -2,18 +2,11 @@
 ** EPITECH PROJECT, 2020
 ** Mostima [WSL: Ubuntu-18.04]
 ** File description:
-** Func
+** EvaFunc
 */
 
-#include "Func.hpp"
+#include "EvaFunc.hpp"
 
 namespace Parser {
-
-    /* CTOR & DTOR */
-
-    Func::Func(std::string &define)
-    {
-
-    }
 
 }

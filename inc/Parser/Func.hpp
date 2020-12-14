@@ -8,24 +8,24 @@
     #include <string>
     #include <vector>
 
-namespace Func {
+namespace Parser {
 
     class Func {
 
         public:
 
-            Func(std::string name, std::vector<std::string> arg, std::vector<std::string> content);
+            Func(std::string &define);
             ~Func() = default;
 
             inline const std::string &getName() const { return _name; }
             inline const std::vector<std::string> &geArg() const { return _arg; }
-            inline const std::vector<std::string> &getContent() const { return _content; }
+
+            inline const size_t getArgNb() const { return _arg.size(); }
 
         private:
 
         std::string _name;
         std::vector<std::string> _arg;
-        std::vector<std::string> _content;
 
     };
 
