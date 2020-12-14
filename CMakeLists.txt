@@ -9,6 +9,7 @@ set(SRCS
     src/Parser/JSONParser.cpp
     src/Parser/File.cpp
     src/Parser/FuncParser.cpp
+    src/Parser/Func.cpp
     )
 
 set(HEADERS
@@ -17,6 +18,7 @@ set(HEADERS
     inc/Parser/JSONParser.hpp
     inc/Parser/File.hpp
     inc/Parser/FuncParser.hpp
+    inc/Parser/Func.hpp
     )
 
 add_executable(Mostima ${SRCS} ${HEADERS})
