@@ -9,6 +9,8 @@
 
     #include <utility>
 
+    #include "File.hpp"
+    #include "JSONParser.hpp"
     #include "Func.hpp"
 
 namespace Parser {
@@ -17,10 +19,10 @@ namespace Parser {
 
         public:
 
-            FuncParser() = default;
+            FuncParser();
             ~FuncParser() = default;
 
-            const std::vector<Func> parse(const std::vector<std::string> &content);
+            std::vector<Func> parse(const std::vector<std::string> &content);
 
             inline bool getError() const { return _err; }
 
@@ -34,13 +36,18 @@ namespace Parser {
             std::vector<std::string> evaArg(const std::string &s);
             std::string evaRet(const std::string &s);
 
-            bool evaFunc(const std::string &s);
+            bool validArg(const std::vector<std::string> &v) const;
+            bool validRet(const std::string &r) const;
+
+            void evaFunc(const std::string &s);
 
         private:
 
             bool _err = false;
 
             std::vector<Func> _func;
+
+            std::vector<std::string> _types;
 
     };
 

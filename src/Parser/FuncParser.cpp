@@ -12,9 +12,18 @@
 
 namespace Parser {
 
+    /* CTOR & DTOR */
+    FuncParser::FuncParser()
+    {
+        Nyx::File rsrc("rsrc/types.json");
+        Nyx::JSONParser jp;
+
+        _types = split(jp.parseRV(rsrc, "types"), ' ');
+    }
+
     /* PUBLIC METHOD(S)*/
 
-    const std::vector<Func> FuncParser::parse(const std::vector<std::string> &content)
+    std::vector<Func> FuncParser::parse(const std::vector<std::string> &content)
     {
         int count = 0;
 
@@ -27,8 +36,7 @@ namespace Parser {
             if (count == 0
             && content[it].find("(") != std::string::npos
             && content[it].find(")") != std::string::npos)
-                if (!evaFunc(content[it]))
-                    _err = true;
+                evaFunc(content[it]);
         }
 
         if (count != 0 || _err == true) {
@@ -116,16 +124,27 @@ namespace Parser {
         return "";
     }
 
-    bool FuncParser::evaFunc(const std::string &s)
+    bool FuncParser::validArg(const std::vector<std::string> &v) const
     {
-        std::cout << evaRet(s) << std::endl;
-        std::cout << evaName(s) << std::endl;
-        for (std::string s : evaArg(s))
-            std::cout << s << std::endl;
-        std::cout << "---" << std::endl;
-
-
+        for (const std::string &arg : v)
+            if (!validRet(arg))
+                return false;
         return true;
+    }
+
+    bool FuncParser::validRet(const std::string &r) const
+    {
+        for (const std::string &s : _types)
+            if (r == s)
+                return true;
+        return false;
+    }
+
+    void FuncParser::evaFunc(const std::string &s)
+    {
+        if (!validArg(evaArg(s)) || !validRet(evaRet(s)))
+            return;
+        _func.push_back({evaName(s), evaArg(s), evaRet(s)});
     }
 
 }

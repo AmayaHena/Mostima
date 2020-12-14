@@ -22,6 +22,11 @@ void lel(size_t a, int b, float c)
     return;
 }
 
+u_int64 lel(long a, u_int64 b, u_int32 c)
+{
+    return;
+}
+
 int iterateHelloWorld(int nb)
 {
     int i = 0;

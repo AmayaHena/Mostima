@@ -14,7 +14,7 @@ namespace Parser {
 
         public:
 
-            Func(std::string &define);
+            Func(std::string name, std::vector<std::string> arg, std::string ret);
             ~Func() = default;
 
             inline const std::string &getName() const { return _name; }

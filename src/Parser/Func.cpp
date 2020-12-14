@@ -10,10 +10,10 @@
 namespace Parser {
 
     /* CTOR & DTOR */
-
-    Func::Func(std::string &define)
-    {
-
-    }
+    Func::Func(std::string name, std::vector<std::string> arg, std::string ret) :
+    _name(name),
+    _arg(arg),
+    _ret(ret)
+    {}
 
 }

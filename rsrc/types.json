@@ -1,5 +1,3 @@
 {
-    "numeric": "int size_t",
-    "char": "char",
-    "string": "char*"
+    "types": "void int size_t float char"
 }
