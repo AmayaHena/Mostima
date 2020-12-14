@@ -16,3 +16,15 @@ int iterate(int i)
 {
     return i++;
 }
+
+int iterateHelloWorld(int nb)
+{
+    int i = 0;
+
+    while (nb <= i) {
+        printf("Hello world\n");
+        i++;
+    }
+
+    return nb;
+}
