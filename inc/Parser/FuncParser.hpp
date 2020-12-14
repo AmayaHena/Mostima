@@ -26,6 +26,18 @@ namespace Parser {
 
         private:
 
+            std::vector<std::string> split(const std::string &s, char delimiter) const;
+
+            std::string getType(const std::string &arg);
+
+            std::string evaName(const std::string &s);
+            std::vector<std::string> evaArg(const std::string &s);
+            std::string evaRet(const std::string &s);
+
+            bool evaFunc(const std::string &s);
+
+        private:
+
             bool _err = false;
 
             std::vector<Func> _func;

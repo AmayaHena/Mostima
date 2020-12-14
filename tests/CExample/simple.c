@@ -17,6 +17,11 @@ int iterate(int i)
     return i++;
 }
 
+void lel(size_t a, int b, float c)
+{
+    return;
+}
+
 int iterateHelloWorld(int nb)
 {
     int i = 0;
