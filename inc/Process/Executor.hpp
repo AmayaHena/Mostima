@@ -7,16 +7,28 @@
 
 #pragma once
 
+    #include "File.hpp"
+    #include "JSONParser.hpp"
+
 namespace Process {
 
-    class Excutor {
+    class Executor {
 
         public:
 
-            Excutor() = default;
-            ~Excutor() = default;
+            Executor();
+            ~Executor() = default;
+
+            bool run(std::vector<std::string> v, const std::string &s);
 
         private:
+
+            std::string minimalCode(const std::string &s);
+
+        private:
+
+            Nyx::File _rsrc;
+            Nyx::JSONParser _jp;
 
     };
 

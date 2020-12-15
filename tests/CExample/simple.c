@@ -14,7 +14,8 @@ void helloWorld()
 
 int iterate(int i)
 {
-    return i++;
+    helloWorld();
+    return i + 1;
 }
 
 void lel(size_t a, int b, float c)
@@ -22,9 +23,19 @@ void lel(size_t a, int b, float c)
     return;
 }
 
-u_int64 lel(long a, u_int64 b, u_int32 c)
+long err(long a)
+{
+    return 5;
+}
+
+void err2(long a)
 {
     return;
+}
+
+long err3()
+{
+    return 5;
 }
 
 int iterateHelloWorld(int nb)

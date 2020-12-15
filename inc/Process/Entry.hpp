@@ -9,6 +9,7 @@
 
     #include "File.hpp"
     #include "FuncParser.hpp"
+    #include "Executor.hpp"
 
 namespace Process {
 
@@ -37,6 +38,7 @@ namespace Process {
 
             Nyx::File _f;
             std::vector<Parser::Func> _func;
+            Executor _exec;
 
     };
 

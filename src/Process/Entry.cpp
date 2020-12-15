@@ -32,6 +32,7 @@ namespace Process {
             if (in == "exit")
                 return true;
             parseInput(in);
+            _exec.run(_f.getContent(), in);
         }
 
         return true;
@@ -85,10 +86,10 @@ namespace Process {
             return error();
 
         if (validFunc(getFunction(s)))
-            std::cout << "Success" << std::endl;
+            return true;
         else
             return error();
-        return true;
+        return false;
     }
 
     bool Entry::error()

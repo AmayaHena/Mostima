@@ -1,4 +1,5 @@
 {
-    "begin": "\nint main(){ std::cout << ",
+    "include": "#include <iostream>",
+    "begin": "int main(){ std::cout << ",
     "end": " << std::endl; return 0;}"
 }
