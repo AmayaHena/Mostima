@@ -25,6 +25,14 @@ namespace Process {
 
             void printParsed(const std::string &f) const;
 
+            std::string prompt() const;
+
+            std::string getFunction(const std::string &s) const;
+            bool validFunc(const std::string &s);
+            bool parseInput(const std::string &s);
+
+            bool error();
+
         private:
 
             Nyx::File _f;

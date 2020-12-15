@@ -24,7 +24,15 @@ namespace Process {
         _func = fp.parse(_f.getContent());
         if (fp.getError() || _func.empty())
             return false;
+
         printParsed(_f.getName());
+
+        while (1) {
+            std::string in = prompt();
+            if (in == "exit")
+                return true;
+            parseInput(in);
+        }
 
         return true;
     }
@@ -44,6 +52,49 @@ namespace Process {
 
             std::cout << ")\n";
         }
+    }
+
+    std::string Entry::prompt() const
+    {
+        std::string s;
+
+        std::cout << "> ";
+        std::getline(std::cin, s);
+        std::cin.clear();
+        return s;
+    }
+
+    std::string Entry::getFunction(const std::string &s) const
+    {
+        if (s.find('(') != std::string::npos)
+            return s.substr(0, s.find('('));
+        return "";
+    }
+
+    bool Entry::validFunc(const std::string &s)
+    {
+        for (Parser::Func f : _func)
+            if (f.getName() == s)
+                return true;
+        return false;
+    }
+
+    bool Entry::parseInput(const std::string &s)
+    {
+        if (getFunction(s) == "")
+            return error();
+
+        if (validFunc(getFunction(s)))
+            std::cout << "Success" << std::endl;
+        else
+            return error();
+        return true;
+    }
+
+    bool Entry::error()
+    {
+        std::cerr << "Error on input" << std::endl;
+        return false;
     }
 
 }
