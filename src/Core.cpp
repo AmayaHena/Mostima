@@ -15,7 +15,6 @@ bool Core::run(const std::vector<std::string> &v) noexcept
     if (!avCheck(v))
         return false;
 
-    _f.setPath(v[0]);
     Parser::FuncParser fp;
 
     if (fp.getError())
