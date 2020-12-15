@@ -5,10 +5,10 @@
 ** FuncParser
 */
 
-#include "FuncParser.hpp"
-
 #include <iostream>
 #include <sstream>
+
+#include "FuncParser.hpp"
 
 namespace Parser {
 
@@ -43,7 +43,6 @@ namespace Parser {
             _func.clear();
             return _func;
         }
-
         return _func;
     }
 

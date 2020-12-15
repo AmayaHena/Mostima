@@ -6,7 +6,7 @@
 */
 
 #include "Core.hpp"
-#include "FuncParser.hpp"
+#include "Entry.hpp"
 
 /* PUBLIC METHOD(S) */
 
@@ -15,20 +15,10 @@ bool Core::run(const std::vector<std::string> &v) noexcept
     if (!avCheck(v))
         return false;
 
-    Parser::FuncParser fp;
+    Process::Entry e(_f);
 
-    if (fp.getError())
+    if (!e.run())
         return false;
-
-    for (Parser::Func f : fp.parse(_f.getContent())) {
-        std::cout << "name: " << f.getName() << std::endl;
-        std::cout << "ret: " << f.getRet() << std::endl;
-        std::cout << "arg(s): " << std::endl;
-        for (const std::string &s : f.geArg())
-            std::cout << "- " << s << std::endl;
-        std::cout << "---" << std::endl;
-    }
-
     return true;
 }
 
