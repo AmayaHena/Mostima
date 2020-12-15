@@ -10,6 +10,7 @@ set(SRCS
     src/Parser/Func.cpp
 
     src/Process/Entry.cpp
+    src/Process/Executor.cpp
 
     src/Utils/JSONParser.cpp
     src/Utils/File.cpp
@@ -22,6 +23,7 @@ set(HEADERS
     inc/Parser/Func.hpp
 
     inc/Process/Entry.hpp
+    inc/Process/Executor.hpp
 
     inc/Utils/JSONParser.hpp
     inc/Utils/File.hpp
