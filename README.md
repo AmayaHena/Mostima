@@ -25,6 +25,16 @@ To clean the repo, you can use the script:
 ./clean.sh
 ```
 
-## Documentaion
+## Usage
 
-You can find the documentation in the Wiki section of this repo.
+```
+USAGE:  ./Mostima File
+
+    File: valid C file
+```
+
+To call a function that is avaible, call it with static parameters.
+
+
+Preview:
+![](https://github.com/AmayaHena/Mostima/blob/master/images/preview.PNG)
