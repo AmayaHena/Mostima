@@ -35,6 +35,7 @@ USAGE:  ./Mostima File
 
 To call a function that is avaible, call it with static parameters.
 
-
 Preview:
+
+
 ![](https://github.com/AmayaHena/Mostima/blob/master/images/preview.PNG)
