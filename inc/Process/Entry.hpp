@@ -28,6 +28,8 @@ namespace Process {
 
             std::string prompt() const;
 
+            bool isVoid(const std::string &in);
+
             std::string getFunction(const std::string &s) const;
             bool validFunc(const std::string &s);
             bool parseInput(const std::string &s);

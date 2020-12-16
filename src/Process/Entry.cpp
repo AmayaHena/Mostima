@@ -32,7 +32,11 @@ namespace Process {
             if (in == "exit")
                 return true;
             parseInput(in);
-            _exec.run(_f.getContent(), in);
+
+            if (isVoid(getFunction(in)))
+                _exec.run(_f.getContent(), in, true);
+            else
+                _exec.run(_f.getContent(), in);
         }
 
         return true;
@@ -64,6 +68,15 @@ namespace Process {
         std::cin.clear();
         return s;
     }
+
+    bool Entry::isVoid(const std::string &in)
+    {
+        for (Parser::Func f : _func)
+            if (f.getName() == in)
+                return (f.getRet() == "void");
+        return error();
+    }
+
 
     std::string Entry::getFunction(const std::string &s) const
     {

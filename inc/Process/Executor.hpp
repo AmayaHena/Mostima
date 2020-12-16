@@ -19,11 +19,13 @@ namespace Process {
             Executor();
             ~Executor() = default;
 
-            bool run(std::vector<std::string> v, const std::string &s);
+            bool run(std::vector<std::string> v, const std::string &s, const bool vd = false);
 
         private:
 
             std::string minimalCode(const std::string &s);
+
+            std::string minimalCodeVoid(const std::string &s);
 
         private:
 
