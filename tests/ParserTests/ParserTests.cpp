@@ -10,7 +10,7 @@
 int main()
 {
     Parser::FuncParser fp;
-    Nyx::File f("../../CExample/simple.c");
+    Nyx::File f("../CExample/simple.c");
 
     std::vector<Parser::Func> v = fp.parse(f.getContent());
 
@@ -22,7 +22,7 @@ int main()
     if (v[0].getArgNb() != 0)
         return 84;
 
-    if (v[1].getName() != "itearate")
+    if (v[1].getName() != "iterate")
         return 84;
     if (v[1].getArgNb() != 1)
         return 84;
@@ -41,8 +41,9 @@ int main()
 
     f.setPath("../CExample/error_1.c");
 
+    v = fp.parse(f.getContent());
+
     if (!v.empty())
         return 84;
-
     return 0;
 }

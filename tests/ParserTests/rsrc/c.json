@@ -1,0 +1,7 @@
+{
+    "include": "#include <iostream>",
+    "begin": "int main(){ std::cout << ",
+    "end": " << std::endl; return 0;}",
+    "begin_void": "int main(){  ",
+    "end_void": "; return 0;}"
+}
