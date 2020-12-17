@@ -19,9 +19,6 @@ namespace Process {
 
     bool Entry::run()
     {
-        if (_f.isFile())
-            return false;
-
         Parser::FuncParser fp;
 
         _func = fp.parse(_f.getContent());
@@ -34,12 +31,13 @@ namespace Process {
             std::string in = prompt();
             if (in == "exit")
                 return true;
-            parseInput(in);
 
-            if (isVoid(getFunction(in)))
-                _exec.run(_f.getContent(), in, true);
-            else
-                _exec.run(_f.getContent(), in);
+            if (parseInput(in)) {
+                if (isVoid(getFunction(in)))
+                    _exec.run(_f.getContent(), in, true);
+                else
+                    _exec.run(_f.getContent(), in);
+            }
         }
 
         return true;
@@ -103,14 +101,12 @@ namespace Process {
 
         if (validFunc(getFunction(s)))
             return true;
-        else
-            return error();
-        return false;
+        return error();
     }
 
     bool Entry::error()
     {
-        std::cerr << "Error on input" << std::endl;
+        std::cerr << "\nError on input\n";
         return false;
     }
 
