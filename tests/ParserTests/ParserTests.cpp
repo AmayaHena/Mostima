@@ -10,7 +10,7 @@
 int main()
 {
     Parser::FuncParser fp;
-    Nyx::File f("../CExample/simple.c");
+    Nyx::File f("../../CExample/simple.c");
 
     std::vector<Parser::Func> v = fp.parse(f.getContent());
 
