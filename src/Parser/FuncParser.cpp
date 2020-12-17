@@ -25,6 +25,9 @@ namespace Parser {
 
     std::vector<Func> FuncParser::parse(const std::vector<std::string> &content)
     {
+        if (content.empty())
+            return _func;
+
         int count = 0;
 
         for (auto it = 0; it <= content.size(); it++) {

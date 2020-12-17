@@ -32,5 +32,6 @@ jobs:
       run: |
         cd tests/ParserTests
         mkdir -p build
-        cd build && cmake .. -G "Unix Makefiles" && cmake --build . && mv Test ..
-        .. && ./Test
+        cd build && cmake .. -G "Unix Makefiles" && cmake --build .
+        mv Test ..
+        cd .. && ./Test

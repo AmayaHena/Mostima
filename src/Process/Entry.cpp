@@ -19,6 +19,9 @@ namespace Process {
 
     bool Entry::run()
     {
+        if (_f.isFile())
+            return false;
+
         Parser::FuncParser fp;
 
         _func = fp.parse(_f.getContent());
