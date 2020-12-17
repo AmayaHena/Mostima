@@ -26,5 +26,5 @@ jobs:
       run: |
         cd tests/AVTests
         mkdir -p build
-        cd build && cmake .. -G "Unix Makefiles" && cmake --build . && mv Test ..
+        cd build && cmake .. -G "Unix Makefiles" && cmake --build .
         ./Test
