@@ -37,5 +37,6 @@ build/
 # VS Code folder
 .vscode
 
-# Local binary
+# Local binary & CI
 Mostima
+tests/AVTests/Test

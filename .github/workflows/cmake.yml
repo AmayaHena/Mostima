@@ -22,7 +22,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: build
-      run: ./build.sh
-    - name: criterion
-      run: sudo add-apt-repository ppa:snaipewastaken/ppa && sudo apt-get install criterion-dev
+    - name: AVTests
+          run: cd tests/AVTests && ./test.sh && ./test && ./clean.sh

@@ -5,33 +5,26 @@
 ** test_crit
 */
 
-#include <criterion/criterion.h>
-#include <criterion/redirect.h>
-
-#include <cstdlib>
-
 #include <Core.hpp>
 
-#define ASSERT_INT(a, b) cr_assert_eq(a, b, "Expected %d, got %d\n", b, a)
-
-Test(void, void)
+int main()
 {
     Core c;
     std::vector<std::string> v;
 
-    ASSERT_INT(0, c.run(v));
-
     v.push_back("a.out");
-
-    ASSERT_INT(0, c.run(v));
+    if (c.run(v))
+        return 84;
 
     v.clear();
     v.push_back("zeajielzaj/ezaoilheolizja/ezailpejzilma.c");
-
-    ASSERT_INT(0, c.run(v));
+    if (c.run(v))
+        return 84;
 
     v.clear();
     v.push_back("zeajielzaj/ezaoilheolizja/ezailpejzilma/ezaeza");
+    if (c.run(v))
+        return 84;
 
-    ASSERT_INT(0, c.run(v));
+    return 0;
 }
