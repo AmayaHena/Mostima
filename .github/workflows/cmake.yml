@@ -23,4 +23,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: AVTests
-      run: cd tests/AVTests && sudo ./test.sh && ./Test && ./clean.sh
+      run: |
+        cd tests/AVTests
+        mkdir -p build
+        cd build && cmake .. -G "Unix Makefiles" && cmake --build . && mv Test ..
+        ./Test
