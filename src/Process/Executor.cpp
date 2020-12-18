@@ -35,7 +35,7 @@ namespace Process {
 
         tmp.create(v);
 
-        system("g++ MostimaFile.cpp && ./a.out");
+        system("g++ MostimaFile.cpp -w && ./a.out");
         system("rm MostimaFile.cpp a.out");
     }
 
